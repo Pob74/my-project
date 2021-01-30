@@ -1,4 +1,11 @@
 module.exports = {
+  chainWebpack: (config) => {
+    config.plugin('html').tap((args) => {
+      args[0].title = 'Zeljko app'
+      return args
+    })
+
+  },
   pwa: {
     manifestOptions: {
       background_color: 'blue'
